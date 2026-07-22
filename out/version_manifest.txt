@@ -1,0 +1,9 @@
+OS: macOS (Darwin arm64)
+Singular: Singular for arm64-Darwin version 4.4.1 (44105, 64 bit) Nov 11 2025 16:12:34, via Homebrew bottle singular 4.4.1p5_3
+Macaulay2: 1.26.06, via Homebrew tap macaulay2/tap, bottle macaulay2 1.26.06_1
+msolve: 0.10.1 (installed as a Macaulay2/tap dependency; not separately invoked -- Task 2 was decided by Singular + Macaulay2 alone, matching the two-system acceptance criterion)
+Python (04-scripts/*.py): Python 3.14.6, sympy 1.14.0
+Note: installing Singular via Homebrew pulled in python@3.14 as a dependency and
+shifted PATH so bare `python3` resolves to it instead of the previously-used
+3.12.7. sympy was reinstalled under the new python3. Re-check `python3 --version`
+after installing Singular/M2 if `make verify` is re-run.

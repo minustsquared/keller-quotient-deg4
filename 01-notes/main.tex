@@ -1,0 +1,288 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newcommand{\C}{\mathbb{C}}
+
+\title{Low-degree classification of torus-equivariant Keller maps\\ in dimension three
+\thanks{Draft. Computational classification, unconditional as of 2026-07-21
+(Level-3 certification, Section~5, discharged; see the status box after the
+title for artifacts). All certificates, solver transcripts, and reproduction
+files accompany this note.}}
+\author{Anonymous\thanks{Pseudonymous deposit. Correspondence: \texttt{minustsquared@gmail.com}. The authors' identity is committed to by a SHA-256 hash published in the accompanying \texttt{COMMITMENT.txt}.}}
+\date{July 2026 --- draft v0.1}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Motivated by the recent counterexample to the Jacobian conjecture in dimension
+three announced by Alp\"oge and credited to the AI system Fable
+\cite{alpoge2026}, which is homogeneous for the $\C^{*}$-action with weights
+$(1,-1,-2)$ and has polynomial degree seven, we classify all Keller maps
+compatible with the same torus action in polynomial degree at most four:
+every $(1,-1,-2)$-equivariant Keller map of degree at most four is a
+polynomial automorphism (Theorem~\ref{thm:main}). The classification was
+first established computationally in conditional form and became
+unconditional on 2026-07-21 once the decomposition was certified exhaustive
+in two independent computer algebra systems (Section~\ref{sec:pending}). The
+question of whether the same holds in degrees five and six --- equivalently,
+whether degree seven is minimal within this symmetry class --- is posed as an
+open computational problem, and the degree-five system (13 unknowns, 17
+equations) is supplied.
+\end{abstract}
+
+\section{Introduction}
+
+A polynomial map $F\colon\C^{n}\to\C^{n}$ is a \emph{Keller map} if
+$\det \operatorname{Jac} F$ is a nonzero constant. The Jacobian conjecture
+\cite{keller1939,bcw1982} asserted that every Keller map is a polynomial
+automorphism; it is now false for $n\ge 3$ by the explicit counterexample of
+\cite{alpoge2026}. The verification paper \cite{ulam2026} checks, in exact
+arithmetic, that the counterexample's Jacobian determinant is a nonzero
+constant and that the map is not injective (an explicit multi-point fiber is
+exhibited), and derives a binary-cubic description of the fibers, of generic
+cardinality three; the present note relies only on these verified facts
+about the example. The
+counterexample has polynomial degree seven and is homogeneous with respect to
+the grading $\operatorname{wt}(x,y,z)=(1,-1,-2)$, with component weights
+$(-2,-1,1)$.
+
+A natural first question about the mechanism is whether it is available in
+lower polynomial degree within the same symmetry class. This note answers that
+question negatively for degree at most four (Theorem~\ref{thm:main}), first in
+conditional form and, as of 2026-07-21, unconditionally once the reduction to
+a single certification task (Section~\ref{sec:pending}) was discharged.
+
+We emphasize the distinction between three evidentiary levels used throughout:
+\begin{itemize}
+\item[\textbf{L1}] \emph{Proved by hand:} the equivariant ansatz and the
+forced-normalization lemma (Lemma~\ref{lem:normal}).
+\item[\textbf{L2}] \emph{Exactly machine-certified:} Jacobian-constancy
+identities, explicit inverse formulas, composition identities, denominator
+conditions, and the $b_0=0$ stratum, with certificates as symbolic objects over
+exact fields (no floating point).
+\item[\textbf{L3}] \emph{Discharged 2026-07-21:} certified exhaustive
+decomposition of the Keller ideal, cross-checked in two independent systems
+(Section~\ref{sec:pending}). The main theorem is unconditional.
+\end{itemize}
+
+\section{The equivariant family and forced normalization}
+
+Fix the $\C^{*}$-action $t\cdot(x,y,z)=(tx,t^{-1}y,t^{-2}z)$ and require
+$F=(F_1,F_2,F_3)$ to have components of weights $(-2,-1,1)$, the weights of the
+known counterexample. For a degree bound $D$, write each $F_i$ as a linear
+combination of the monomials of the prescribed weight and total degree at most
+$D$.
+
+\begin{lemma}[Forced normalization]\label{lem:normal}
+The only degree-one monomials of weights $-2$, $-1$, $1$ are $z$, $y$, $x$
+respectively, so the linear part of any such $F$ is anti-diagonal,
+$(\alpha z,\beta y,\gamma x)$, and $\det\operatorname{Jac}F(0)=-\alpha\beta\gamma$.
+If $F$ is Keller then $\alpha\beta\gamma\neq0$, and $F$ may be normalized to
+$\alpha=\beta=\gamma=1$ by equivariant diagonal linear changes of source and
+target. Hence the normalized family considered below contains every
+$(1,-1,-2)$-equivariant Keller map of degree at most $D$ up to such changes.
+\end{lemma}
+
+\begin{proof}
+Weight bookkeeping gives the monomial claim; the constant $\det\operatorname{Jac}F$
+equals its value at the origin, which is the determinant of the linear part.
+Diagonal linear maps $\operatorname{diag}(s,t,u)$ commute with the torus action,
+so pre- and post-composition by such maps preserves the equivariance class;
+the six available scalings (with a one-dimensional redundancy from the torus
+itself) normalize the three anchor coefficients to $1$.
+\end{proof}
+
+For $D=4$ the normalized family is explicitly
+\[
+F=\bigl(z+a_0y^2+a_1xyz+a_2xy^3+a_3x^2z^2,\;
+y+b_0xz+b_1xy^2+b_2x^2yz,\;
+x+c_0x^2y+c_1x^3z\bigr),
+\]
+nine unknown coefficients; imposing
+constancy of $\det\operatorname{Jac}F$ yields $11$ polynomial equations over
+$\mathbb{Q}$ (the \emph{Keller ideal}). Note that for weight-homogeneous $F$
+the determinant is automatically of weight zero, i.e.\ a polynomial in the
+invariants $xy$ and $x^{2}z$; this is the structural reason the constancy
+condition is a manageable system.
+
+\section{Certification methodology (L2)}\label{sec:method}
+
+The Keller ideal was decomposed with SymPy~1.14.0 (Python~3.12.3) via
+Gr\"obner-based triangular decomposition (\texttt{sympy.solve}). The raw
+case-split returns $27$ branches, several re-derived along redundant
+elimination paths; deduplicating by solution locus leaves $5$ distinct
+parametrized families. (Correction, 2026-07-21: earlier circulated drafts of
+this note quoted the raw, undeduplicated branch count; no family or
+certificate was lost by deduplicating, only redundant re-derivations of the
+same locus.) The completeness of this decomposition was item L3, discharged
+2026-07-21 (Section~\ref{sec:pending}). For each family, with free parameters
+kept \emph{symbolic}:
+\begin{enumerate}
+\item the substituted determinant is expanded and verified to be a constant
+identically in $(x,y,z)$ (it equals $-1$ on every family);
+\item a lexicographic Gr\"obner basis of
+$\langle F_1-p,\,F_2-q,\,F_3-r\rangle$ ($x>y>z$) is computed over the exact
+function field $\mathbb{Q}(\text{parameters})(p,q,r)$, the unique solution
+$(x,y,z)=(X,Y,Z)(p,q,r)$ is extracted, and the composition identities
+$F_i(X,Y,Z)=p,q,r$ are verified by exact cancellation;
+\item all irreducible factors of all denominators of $X,Y,Z$ are computed. If
+every factor is a nonzero constant, the inverse is valid for \emph{every}
+parameter specialization in the family's domain (\emph{pointwise} certificate);
+otherwise the factors are recorded as exceptional.
+\end{enumerate}
+A rational inverse with polynomial re-composition to the identity makes the map
+birational; a birational Keller map is a polynomial automorphism. Indeed, a
+Keller map is \'etale, hence quasi-finite, and a separated, quasi-finite,
+birational morphism onto a normal variety is an open immersion by Zariski's
+main theorem \cite{mumford}; applied to $F\colon\C^{n}\to\C^{n}$ this makes
+$F$ injective, and an injective polynomial self-map of $\C^{n}$ is an
+automorphism with polynomial inverse \cite{rudin}. When the certificate is
+pointwise, this conclusion holds at every parameter value, not only generically.
+
+Outcome: $4$ of $5$ distinct families certify pointwise. The remaining $1$
+certifies with the single exceptional factor $b_0$ (the coefficient of $xz$
+in $F_2$), hence pointwise on the constructible piece $b_0\neq0$, which is the
+entire stated domain of that parametrization. The complementary constructible
+piece is handled by decomposing the ideal augmented by $b_0$: after the same
+deduplication it yields $1$ distinct family, which certifies pointwise.
+(Second correction, 2026-07-21: this stratum's decomposition initially
+appeared to yield $2$ distinct families, for $7$ total; one of those two
+turned out to be an exact duplicate of a \emph{main}-branch family --- the
+main decomposition, not told to assume $b_0=0$, had independently landed on
+a branch already sitting there. Deduplicating across both files, not only
+within each, leaves $6$ distinct families total, $5$ from the main piece and
+$1$ genuinely new from the stratum.) All certificates are supplied as
+machine-readable JSON with the full inverse formulas. An independent
+verifier --- a separate program that reads only the static certificates and
+checks the determinant identities, both compositions
+$F\circ H=\operatorname{id}$ and $H\circ F=\operatorname{id}$, and the
+recorded denominator factors, performing no solving --- passes on all $6$
+distinct families. The ideal-theoretic certification
+(Section~\ref{sec:pending}) separates the two loci as the saturation
+$I:b_0^{\infty}$ and the sum $I+\langle b_0\rangle$ and requires their
+components to be covered by the certified families -- carried out and
+discharged 2026-07-21.
+
+\section{Main result}
+
+\begin{theorem}[Computational classification]\label{thm:main}
+Every $(1,-1,-2)$-equivariant Keller map $\C^3\to\C^3$ of polynomial degree at
+most four is a polynomial automorphism.
+\end{theorem}
+
+The Keller ideal $I$ has exactly three minimal primes (Singular~4.4.1
+\texttt{minAssGTZ}, independently reproduced in Macaulay2~1.26.06
+\texttt{decompose}). Minimal primes suffice because the theorem is a
+statement about \emph{points}: the set of normalized equivariant Keller maps
+is the affine variety $V(I)$, and set-theoretically
+$V(I)=V(P_1)\cup V(P_2)\cup V(P_3)$ over the minimal primes, irrespective of
+any embedded associated primes, which contribute no additional points (no
+radicality claim about $I$ is made or needed). The relation between the six
+certified families and the three components is as follows
+(\texttt{out/certify.log}): families $0$, $2$, and $5$ are dense charts of
+the three components --- component $1\leftrightarrow$ family $5$,
+$2\leftrightarrow2$, $3\leftrightarrow0$ --- with family $5$ the
+$b_0$-stratum family, so one entire component lies inside $\{b_0=0\}$; the
+remaining families $1$, $3$, $4$ are constructible subfamilies contained in
+these closures, which arose as separate branches of the triangular
+decomposition and are retained with their own certificates. Every point of
+every component carries an explicit polynomial inverse with both
+compositions verified: the pointwise certificates are valid on their entire
+loci, and the single non-pointwise chart (family $0$, valid on $b_0\neq0$)
+is complemented by the $b_0=0$ stratum decomposition
+(Section~\ref{sec:method}).
+
+\begin{remark}
+The theorem should be read together with Lemma~\ref{lem:normal}: the
+normalization is not a hypothesis but a reduction, so the conclusion covers
+the full equivariant class up to equivariant diagonal linear changes.
+\end{remark}
+
+\begin{remark}[Certification history]
+Earlier drafts stated Theorem~\ref{thm:main} conditionally on the
+exhaustiveness of the computed decomposition; that certification is now
+discharged (Section~\ref{sec:pending}). The certification process surfaced
+and corrected two family-count bookkeeping errors and two computer-algebra
+usage bugs, none affecting the mathematical content. The full audit trail
+--- the family-count correction history and the specific Singular and
+Macaulay2 pitfalls, recorded so that others do not lose time to them --- is
+kept in the accompanying repository (\texttt{HANDOFF.md}) rather than here.
+\end{remark}
+
+\section{Certification history (L3, discharged 2026-07-21)}\label{sec:pending}
+
+The single previously-uncertified step was exhaustiveness of the two
+decompositions. The accompanying files \texttt{certify\_exhaustiveness.sing}
+(Singular, \texttt{minAssGTZ} plus containment checks against the 6 certified
+family ideals) and \texttt{deg4\_decomposition.m2} (Macaulay2,
+\texttt{decompose}) compute the minimal associated primes of the Keller ideal
+over $\mathbb{Q}$. Both agree on 3 minimal primes; every one is covered by a
+certified family, and every certified family lies inside the Keller variety
+(both containment directions checked, see \texttt{out/certify.log}). The
+theorem is therefore unconditional: no omitted component remains that could
+contain maps outside the certified families.
+
+\section{Open problems}
+
+\begin{problem}
+Decide degrees five and six. The degree-five Keller system ($13$ unknowns,
+$17$ equations, supplied in \texttt{deg5\_system.txt}) exceeded the pure-Python
+Gr\"obner engine used here; an exact decomposition in Singular is running as
+of this writing (2026-07-21) but has not finished, apparently limited by
+intermediate coefficient growth rather than the size of the search space --
+three independent modular runs (primes 32003, 32009, 65003) each find exactly
+$2$ minimal primes with identical structure, and three exact families
+reconstructed from them (one splitting into two further branches) each
+independently verify: $\det=-1$ and an explicit polynomial inverse with
+verified composition, by the same method as the certified degree-4 families
+(\texttt{04-scripts/reconstruct\_deg5\_candidates.py}). \textbf{This is not a
+classification result for degree five} -- the modular component count is a
+heuristic preview, not a characteristic-zero certificate, and exhaustiveness
+of these families has not been established by any method. A negative answer
+through degree six would establish degree seven as minimal within this
+symmetry class and invite a conceptual explanation, possibly via the
+binary-cubic fiber mechanism of \cite{ulam2026}.
+\end{problem}
+
+\begin{problem}
+Enumerate all weight systems $(w_1,w_2,w_3)$ admitting nontrivial equivariant
+Keller families in low degree, and run the same classification across them.
+\end{problem}
+
+\begin{problem}
+Replace the branch-by-branch computation with a structural proof, e.g.\ a
+triangular factorization theorem for low-degree equivariant Keller maps.
+\end{problem}
+
+\section*{Acknowledgment}
+
+The formulation and the exploratory symbolic computations were carried out
+with the assistance of Claude Fable (Anthropic). All results are certified
+by machine-checkable artifacts in exact arithmetic --- certificates, solver
+transcripts, and an independent solving-free verifier in the accompanying
+repository --- independent of any AI system's reasoning and reproducible
+from the supplied materials. Correspondence: \texttt{minustsquared@gmail.com}.
+
+\begin{thebibliography}{9}
+\bibitem{alpoge2026} L.~Alp\"oge, X post, July 20, 2026,
+\url{https://x.com/__alpoge__/status/2079028340955197566}.
+\bibitem{ulam2026} A counterexample to the Jacobian conjecture, verification
+paper, July 20, 2026, \url{https://www.ulam.ai/research/jacobian.pdf}.
+\bibitem{keller1939} O.-H.~Keller, Ganze Cremona-Transformationen,
+Monatsh.\ Math.\ Phys.\ 47 (1939), 299--306.
+\bibitem{bcw1982} H.~Bass, E.~H.~Connell, D.~Wright, The Jacobian conjecture:
+reduction of degree and formal expansion of the inverse, Bull.\ Amer.\ Math.\
+Soc.\ 7 (1982), 287--330.
+\bibitem{rudin} W.~Rudin, Injective polynomial maps are automorphisms,
+Amer.\ Math.\ Monthly 102 (1995), 540--543.
+\bibitem{mumford} D.~Mumford, \emph{The Red Book of Varieties and Schemes},
+Lecture Notes in Mathematics 1358, Springer, 1988 (Zariski's main theorem).
+\end{thebibliography}
+
+\end{document}

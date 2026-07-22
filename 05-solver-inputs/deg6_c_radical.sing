@@ -1,0 +1,47 @@
+// D0 PROGRAM, decisive check, degree 6: is c_i in rad(I) for i = 0,1,2,3?
+// If YES for all four, then EVERY degree-6 Keller map of the class has
+// T == 1 identically. Combined with the deg-5 check and the T-constant
+// reduction (identity + mu-transfer + Moh's two-variable theorem), this
+// yields: degree seven is MINIMAL in the equivariance class.
+// Rabinowitsch: c in rad(I) <=> 1 in I + <1 - tt*c>.
+// If QQ blows up, run first with ring char 32003 as a fast preview.
+option(redSB);
+ring R = 0, (a0,a1,a2,a3,a4,a5,a6,b0,b1,b2,b3,b4,b5,c0,c1,c2,c3,tt), dp;
+ideal I =
+  -6*a6*b5*c3,
+  5*a6*b4*c3,
+  6*a5*b5*c3,
+  -a4*b5*c3 + 16*a5*b4*c3 - 13*a6*b3*c3 - 3*a6*b5*c2,
+  -8*a3*b5*c3 + 9*a4*b4*c3 - 2*a6*b2*c3 + 6*a6*b4*c2 - 6*a6*b5*c1,
+  2*a3*b4*c3 + 3*a6*b4*c1,
+  -2*a5*b3*c3 + 8*a5*b5*c2,
+  4*a2*b5*c3 - 8*a4*b3*c3 + 2*a4*b5*c2 + 8*a5*b2*c3 + 16*a5*b4*c2 + 4*a5*b5*c1 - 10*a6*b3*c2,
+  -3*a1*b5*c3 + 13*a2*b4*c3 - 14*a3*b3*c3 - 4*a3*b5*c2 + 2*a4*b2*c3 + 10*a4*b4*c2 - 2*a4*b5*c1 + 12*a5*b4*c1 - 9*a6*b1*c3 - a6*b2*c2 - 11*a6*b3*c1 - 3*a6*b5*c0,
+  6*a1*b4*c3 - 4*a3*b2*c3 + 4*a3*b4*c2 - 8*a3*b5*c1 + 6*a4*b4*c1 + 2*a6*b0*c3 - 2*a6*b2*c1 + 4*a6*b4*c0,
+  -3*a2*b3*c3 + 7*a2*b5*c2 - 5*a4*b3*c2 + 8*a5*b2*c2 - 2*a5*b3*c1 + 6*a5*b5*c0,
+  2*a0*b5*c3 - 9*a1*b3*c3 + a1*b5*c2 + 6*a2*b2*c3 + 14*a2*b4*c2 + 2*a2*b5*c1 - 10*a3*b3*c2 - 5*a4*b1*c3 + 3*a4*b2*c2 - 7*a4*b3*c1 + a4*b5*c0 + 10*a5*b0*c3 + 6*a5*b2*c1 + 12*a5*b4*c0 - 8*a6*b1*c2 - 8*a6*b3*c0,
+  10*a0*b4*c3 + 8*a1*b4*c2 - 4*a1*b5*c1 + 9*a2*b4*c1 - 10*a3*b1*c3 - 2*a3*b2*c2 - 12*a3*b3*c1 - 4*a3*b5*c0 + 5*a4*b0*c3 + a4*b2*c1 + 7*a4*b4*c0 + a6*b0*c2 - 7*a6*b1*c1 - a6*b2*c0 - 3*a6*b5 - 5*a6*c3 - 5*b5*c3,
+  3*a1*b4*c1 - 4*a3*b2*c1 + 2*a3*b4*c0 + 2*a6*b0*c1 + 2*a6*b4 + 3*b4*c3,
+  -4*a0*b3*c3 + 6*a0*b5*c2 - 5*a1*b3*c2 - a2*b1*c3 + 7*a2*b2*c2 - 3*a2*b3*c1 + 5*a2*b5*c0 - 4*a4*b1*c2 - 4*a4*b3*c0 + 8*a5*b0*c2 + 6*a5*b2*c0 + 4*a5*b5 + 2*a5*c3,
+  4*a0*b2*c3 + 12*a0*b4*c2 - 6*a1*b1*c3 + 2*a1*b2*c2 - 8*a1*b3*c1 + 8*a2*b0*c3 + 4*a2*b2*c1 + 10*a2*b4*c0 - 8*a3*b1*c2 - 8*a3*b3*c0 + 4*a4*b0*c2 - 4*a4*b1*c1 + 2*a4*b2*c0 - 2*a4*c3 + 8*a5*b0*c1 + 8*a5*b4 - 6*a6*b1*c0 - 6*a6*b3 - 6*a6*c2 - 10*b3*c3,
+  6*a0*b4*c1 + 3*a1*b0*c3 - a1*b2*c1 + 5*a1*b4*c0 - 8*a3*b1*c1 - 2*a3*b2*c0 - 4*a3*b5 - 6*a3*c3 + 4*a4*b0*c1 + 4*a4*b4 + a6*b0*c0 - a6*b2 - 3*a6*c1 - 2*b2*c3 + 6*b4*c2 - 6*b5*c1,
+  -2*a0*b1*c3 + 6*a0*b2*c2 - 4*a0*b3*c1 + 4*a0*b5*c0 - 4*a1*b1*c2 - 4*a1*b3*c0 + 7*a2*b0*c2 - a2*b1*c1 + 5*a2*b2*c0 + 3*a2*b5 + a2*c3 - 3*a4*b1*c0 - 3*a4*b3 - 3*a4*c2 + 6*a5*b0*c0 + 4*a5*b2 + 2*a5*c1 - 5*b3*c2,
+  6*a0*b0*c3 + 2*a0*b2*c1 + 8*a0*b4*c0 + 3*a1*b0*c2 - 5*a1*b1*c1 + a1*b2*c0 - a1*b5 - 3*a1*c3 + 6*a2*b0*c1 + 6*a2*b4 - 6*a3*b1*c0 - 6*a3*b3 - 6*a3*c2 + 3*a4*b0*c0 + a4*b2 - a4*c1 - 4*a6*b1 - 4*a6*c0 - 7*b1*c3 + b2*c2 - 9*b3*c1 - b5*c0,
+  2*a1*b0*c1 + 2*a1*b4 - 2*a3*b2 - 4*a3*c1 + a6*b0 + b0*c3 - 3*b2*c1 + 3*b4*c0,
+  6*a0*b0*c2 - 2*a0*b1*c1 + 4*a0*b2*c0 + 2*a0*b5 - 3*a1*b1*c0 - 3*a1*b3 - 3*a1*c2 + 5*a2*b0*c0 + 3*a2*b2 + a2*c1 - 2*a4*b1 - 2*a4*c0 + 4*a5*b0 - 4*b1*c2 - 4*b3*c0,
+  4*a0*b0*c1 + 4*a0*b4 + 2*a1*b0*c0 - 2*a1*c1 - 4*a3*b1 - 4*a3*c0 + 2*a4*b0 - 2*a6 + 2*b0*c2 - 6*b1*c1 - 2*b5 - 4*c3,
+  4*a0*b0*c0 + 2*a0*b2 - 2*a1*b1 - 2*a1*c0 + 3*a2*b0 - a4 - 3*b1*c0 - 3*b3 - 3*c2,
+  a1*b0 - 2*a3 + b0*c0 - b2 - 3*c1,
+  2*a0*b0 - a1 - 2*b1 - 2*c0;
+int ok = 1;
+ideal J0 = std(I + ideal(1 - tt*c0));
+if (reduce(1, J0) != 0) { ok = 0; "c0: NOT in rad(I)"; } else { "c0: in rad(I)"; }
+ideal J1 = std(I + ideal(1 - tt*c1));
+if (reduce(1, J1) != 0) { ok = 0; "c1: NOT in rad(I)"; } else { "c1: in rad(I)"; }
+ideal J2 = std(I + ideal(1 - tt*c2));
+if (reduce(1, J2) != 0) { ok = 0; "c2: NOT in rad(I)"; } else { "c2: in rad(I)"; }
+ideal J3 = std(I + ideal(1 - tt*c3));
+if (reduce(1, J3) != 0) { ok = 0; "c3: NOT in rad(I)"; } else { "c3: in rad(I)"; }
+if (ok) { "RESULT: DEG6 T-CONSTANT -- combined with deg5, degree seven is minimal (given the Moh reduction)"; }
+else    { "RESULT: DEG6 HAS NONCONSTANT-T LOCUS -- inspect which c survives; a genuine nonconstant-T component would be a NEW low-degree counterexample candidate"; }
+quit;

@@ -1,0 +1,10 @@
+                     SINGULAR                                 /  Development
+ A Computer Algebra System for Polynomial Computations       /   version 4.4.1
+                                                           0<
+ by: W. Decker, G.-M. Greuel, G. Pfister, H. Schoenemann     \   Jan 2025
+FB Mathematik der Universitaet, D-67653 Kaiserslautern        \
+c0: in rad(I) mod 32003
+c1: in rad(I) mod 32003
+c2: in rad(I) mod 32003
+RESULT: DEG5 T-CONSTANT (MOD 32003 PREVIEW ONLY -- NOT A QQ CERTIFICATE)
+Auf Wiedersehen.

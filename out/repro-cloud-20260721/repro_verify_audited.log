@@ -1,0 +1,8 @@
+/root/repro-audited/03-certificates/deg4_main_branches.json branch  0: OK
+/root/repro-audited/03-certificates/deg4_main_branches.json branch  1: OK
+/root/repro-audited/03-certificates/deg4_main_branches.json branch  2: OK
+/root/repro-audited/03-certificates/deg4_main_branches.json branch  3: OK
+/root/repro-audited/03-certificates/deg4_main_branches.json branch  4: OK
+/root/repro-audited/03-certificates/deg4_b0_stratum.json branch  0: OK
+
+FAILURES: 0   TIMEOUTS: 0

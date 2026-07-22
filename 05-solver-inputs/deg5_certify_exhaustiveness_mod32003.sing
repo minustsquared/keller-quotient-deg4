@@ -1,0 +1,63 @@
+// Modular (char 32003) PREVIEW of deg5_certify_exhaustiveness.sing.
+// NOT a characteristic-zero certificate -- fast heuristic read only.
+LIB "elim.lib";
+option(redSB);
+ring R = 32003, (a0,a1,a2,a3,a4,b0,b1,b2,b3,b4,c0,c1,c2), dp;
+ideal I =
+  10*a4*b4*c2,
+  4*a3*b4*c2 + 6*a4*b4*c1,
+  -5*a4*b3*c2,
+  14*a2*b4*c2 - 10*a3*b3*c2 + 3*a4*b2*c2 - 7*a4*b3*c1,
+  8*a1*b4*c2 + 9*a2*b4*c1 - 2*a3*b2*c2 - 12*a3*b3*c1 + a4*b2*c1 + 7*a4*b4*c0,
+  3*a1*b4*c1 - 4*a3*b2*c1 + 2*a3*b4*c0,
+  -5*a1*b3*c2 + 7*a2*b2*c2 - 3*a2*b3*c1 - 4*a4*b1*c2 - 4*a4*b3*c0,
+  12*a0*b4*c2 + 2*a1*b2*c2 - 8*a1*b3*c1 + 4*a2*b2*c1 + 10*a2*b4*c0 - 8*a3*b1*c2 - 8*a3*b3*c0 + 4*a4*b0*c2 - 4*a4*b1*c1 + 2*a4*b2*c0,
+  6*a0*b4*c1 - a1*b2*c1 + 5*a1*b4*c0 - 8*a3*b1*c1 - 2*a3*b2*c0 + 4*a4*b0*c1 + 4*a4*b4 + 6*b4*c2,
+  6*a0*b2*c2 - 4*a0*b3*c1 - 4*a1*b1*c2 - 4*a1*b3*c0 + 7*a2*b0*c2 - a2*b1*c1 + 5*a2*b2*c0 - 3*a4*b1*c0 - 3*a4*b3 - 3*a4*c2 - 5*b3*c2,
+  2*a0*b2*c1 + 8*a0*b4*c0 + 3*a1*b0*c2 - 5*a1*b1*c1 + a1*b2*c0 + 6*a2*b0*c1 + 6*a2*b4 - 6*a3*b1*c0 - 6*a3*b3 - 6*a3*c2 + 3*a4*b0*c0 + a4*b2 - a4*c1 + b2*c2 - 9*b3*c1,
+  2*a1*b0*c1 + 2*a1*b4 - 2*a3*b2 - 4*a3*c1 - 3*b2*c1 + 3*b4*c0,
+  6*a0*b0*c2 - 2*a0*b1*c1 + 4*a0*b2*c0 - 3*a1*b1*c0 - 3*a1*b3 - 3*a1*c2 + 5*a2*b0*c0 + 3*a2*b2 + a2*c1 - 2*a4*b1 - 2*a4*c0 - 4*b1*c2 - 4*b3*c0,
+  4*a0*b0*c1 + 4*a0*b4 + 2*a1*b0*c0 - 2*a1*c1 - 4*a3*b1 - 4*a3*c0 + 2*a4*b0 + 2*b0*c2 - 6*b1*c1,
+  4*a0*b0*c0 + 2*a0*b2 - 2*a1*b1 - 2*a1*c0 + 3*a2*b0 - a4 - 3*b1*c0 - 3*b3 - 3*c2,
+  a1*b0 - 2*a3 + b0*c0 - b2 - 3*c1,
+  2*a0*b0 - a1 - 2*b1 - 2*c0;
+
+ideal J1 = a1, a3, a4, b2, b4, c0, c1, c2, b1 - a0*b0, b3 - a2*b0;
+ideal J2raw = a2, a4, b3, c0, c1, c2,
+  4*b4*(b0*b2 - 2*b4)*a0 - b2^3,
+  (b0*b2 - 2*b4)*a1 - b2^2,
+  (b0*b2 - 2*b4)*a3 - b2*b4,
+  4*b4*b1 - b2^2;
+list S2 = sat(J2raw, ideal(b4*(b0*b2 - 2*b4)));
+ideal J2 = S2[1];
+ideal J3 = a1 - 2*a0*b0, a2, a3 - a0*b0^2, a4, b1, b2, b3, b4, c0, c1, c2;
+
+int ok = 1; int k; int i;
+list Js = list(J1, J2, J3);
+for (k = 1; k <= 3; k++) {
+  ideal Jstd = std(Js[k]);
+  for (i = 1; i <= size(I); i++) {
+    if (reduce(I[i], Jstd) != 0) { ok = 0;
+      "FAIL (A): I generator", i, "not in J" + string(k); }
+  }
+}
+if (ok) { "CHECK (A) PASSED (mod 32003)"; }
+
+ideal K = intersect(J1, J2, J3);
+"intersection has", size(K), "generators";
+ring Rt = 32003, (a0,a1,a2,a3,a4,b0,b1,b2,b3,b4,c0,c1,c2,tt), dp;
+ideal It = imap(R, I);
+ideal Kt = imap(R, K);
+int okB = 1;
+for (i = 1; i <= size(Kt); i++) {
+  ideal rab = std(It + ideal(1 - tt*Kt[i]));
+  if (reduce(1, rab) != 0) { okB = 0;
+    "FAIL (B): intersection generator", i, "NOT in rad(I) mod 32003"; }
+  else { "  gen", i, "of", size(Kt), ": in rad(I) mod 32003"; }
+}
+if (ok && okB) {
+  "RESULT: DEG5 EXHAUSTIVE (MOD 32003 PREVIEW ONLY -- NOT A QQ CERTIFICATE)";
+} else {
+  "RESULT: GAP FOUND (MOD 32003 PREVIEW ONLY -- NOT A QQ CERTIFICATE)";
+}
+quit;

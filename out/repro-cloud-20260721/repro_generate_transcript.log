@@ -1,0 +1,21 @@
+deg<=4 system: 9 unknowns, 11 equations
+Dedup criterion (exact, for the audit trail): two solve() branches are collapsed iff their {unknown: value} maps are identical after sympy's default str() rendering, compared as a sorted tuple of (str(key), str(value)) pairs. This is SYNTACTIC equality of the already-canonicalized expression, not a semantic variety-equality check -- no Groebner/ideal-membership test was run to ask whether two syntactically different maps could parametrize the same locus. Every duplicate group actually found was exact-string-identical (same free parameters, same RHS text), consistent with sympy re-deriving one branch along multiple redundant elimination paths, which is what inspection of the pre-dedup JSON confirmed. This method could in principle miss a duplicate pair that is the same locus but written with differently-ordered or differently-simplified expressions; none of that was tested for.
+main decomposition (sympy triangular solve, UNCERTIFIED completeness): 27 solve() branches, 5 distinct after dedup, in 16.8s
+  distinct family 0 <- raw solve() branches [0, 1, 2, 3, 4, 5, 6, 7, 8]
+  distinct family 1 <- raw solve() branches [9, 10, 11, 12, 13, 14, 15]
+  distinct family 2 <- raw solve() branches [16, 17, 18, 19, 20]
+  distinct family 3 <- raw solve() branches [21]
+  distinct family 4 <- raw solve() branches [22, 23, 24, 25, 26]
+  branch  0: det=-1, generic_with_exceptional exceptional ['b0']
+  branch  1: det=-1, pointwise
+  branch  2: det=-1, pointwise
+  branch  3: det=-1, pointwise
+  branch  4: det=-1, pointwise
+b0=0 stratum decomposition (UNCERTIFIED completeness): 22 solve() branches, 2 distinct after within-file dedup, in 1.2s
+  distinct b0-stratum family 0 <- raw solve() branches [0, 1, 2, 3, 4, 5]
+  distinct b0-stratum family 1 <- raw solve() branches [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+  b0-stratum family 1 is IDENTICAL to a main-branch family (cross-file duplicate) -- dropped, already certified above.
+  b0-stratum branch  0: pointwise
+deg<=5 system exported: 13 unknowns, 17 equations
+SUMMARY: main families 5 (4 pointwise, 1 with exceptional factor b0, valid on b0 != 0); b0=0 stratum families 1 (1 pointwise).
+CONDITIONAL on Level-3 decomposition certification; see note/main.tex.

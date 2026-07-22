@@ -1,0 +1,32 @@
+PSEUDONYMOUS DEPOSIT — IDENTITY COMMITMENT
+
+This work is deposited pseudonymously. The authors' identity is committed to
+by the SHA-256 hash below, computed over a private identity statement
+(containing the authors' legal name, contact address, control of the
+correspondence address minustsquared@gmail.com, a binding hash of the
+non-anonymous variant of this bundle, and a 256-bit random nonce). The
+statement will be published if and when the authors choose to de-anonymize;
+verifying its hash against the value below then proves authorship as of the
+deposit date.
+
+SHA-256(identity statement) =
+b4e6c52f889190716547737301138552a9bb50a8c3305d7f42764826e71d76ab
+
+Anonymization notes: the folder 02-email/ (private correspondence) is
+omitted; owner/name strings in HANDOFF.md and README.md are withheld;
+absolute filesystem paths in 03-certificates/verification_report.json and
+out/deg5_qq_run_manifest.txt have the user directory replaced by "REDACTED".
+No other byte of any audited artifact was altered.
+
+Checksum note: out/SHA256SUMS.txt and out/SHA256SUMS-bundle.txt in this
+variant are computed over THIS variant's files, so the deposit
+self-validates; they differ from the named variant only at the withheld or
+redacted files, the two note PDFs/sources (author fields), and these
+checksum files themselves.
+
+Degree-5 status note: files named deg5_candidate_* and
+deg5_decomposition_modular.* are exact Level-2 certificates for candidate
+families reconstructed from MODULAR decompositions (ZZ/32003, ZZ/32009,
+ZZ/65003); the characteristic-zero exhaustiveness certificate for degree 5
+(deg5_certify_exhaustiveness.sing) had not completed at deposit time. No
+degree-5 classification is claimed in this deposit.

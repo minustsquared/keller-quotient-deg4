@@ -1,0 +1,28 @@
+[
+ {
+  "status": "pointwise",
+  "exceptional_factors": [],
+  "inverse": {
+   "x": "r",
+   "y": "q",
+   "z": "-a0*q**2 - a2*q**3*r + p"
+  },
+  "composition_verified": true,
+  "branch": 0,
+  "solution": {
+   "a1": "0",
+   "a3": "0",
+   "b0": "0",
+   "b1": "0",
+   "b2": "0",
+   "c0": "0",
+   "c1": "0"
+  },
+  "free_parameters": [
+   "a0",
+   "a2"
+  ],
+  "det_constant_identity": true,
+  "det_value": "-1"
+ }
+]

@@ -1,0 +1,134 @@
+[
+ {
+  "status": "generic_with_exceptional",
+  "exceptional_factors": [
+   "b0"
+  ],
+  "inverse": {
+   "x": "r",
+   "y": "-b0*p*r + q",
+   "z": "(-b0**2*b1*p**2*r**2 + 2*b0*b1*p*q*r + b0*p - b1*q**2)/b0"
+  },
+  "composition_verified": true,
+  "branch": 0,
+  "solution": {
+   "a0": "b1/b0",
+   "a1": "0",
+   "a2": "0",
+   "a3": "0",
+   "b2": "0",
+   "c0": "0",
+   "c1": "0"
+  },
+  "free_parameters": [
+   "b0",
+   "b1"
+  ],
+  "det_constant_identity": true,
+  "det_value": "-1"
+ },
+ {
+  "status": "pointwise",
+  "exceptional_factors": [],
+  "inverse": {
+   "x": "r",
+   "y": "-b0*p*r + q",
+   "z": "-a0*b0**2*p**2*r**2 + 2*a0*b0*p*q*r - a0*q**2 + p"
+  },
+  "composition_verified": true,
+  "branch": 1,
+  "solution": {
+   "a1": "0",
+   "a2": "0",
+   "a3": "0",
+   "b1": "a0*b0",
+   "b2": "0",
+   "c0": "0",
+   "c1": "0"
+  },
+  "free_parameters": [
+   "a0",
+   "b0"
+  ],
+  "det_constant_identity": true,
+  "det_value": "-1"
+ },
+ {
+  "status": "pointwise",
+  "exceptional_factors": [],
+  "inverse": {
+   "x": "r",
+   "y": "a0*b0*q**2*r - b0*p*r + q",
+   "z": "-a0*q**2 + p"
+  },
+  "composition_verified": true,
+  "branch": 2,
+  "solution": {
+   "a1": "2*a0*b0",
+   "a2": "0",
+   "a3": "a0*b0**2",
+   "b1": "0",
+   "b2": "0",
+   "c0": "0",
+   "c1": "0"
+  },
+  "free_parameters": [
+   "a0",
+   "b0"
+  ],
+  "det_constant_identity": true,
+  "det_value": "-1"
+ },
+ {
+  "status": "pointwise",
+  "exceptional_factors": [],
+  "inverse": {
+   "x": "r",
+   "y": "-b0*p*r + q",
+   "z": "p"
+  },
+  "composition_verified": true,
+  "branch": 3,
+  "solution": {
+   "a0": "0",
+   "a1": "0",
+   "a2": "0",
+   "a3": "0",
+   "b1": "0",
+   "b2": "0",
+   "c0": "0",
+   "c1": "0"
+  },
+  "free_parameters": [
+   "b0"
+  ],
+  "det_constant_identity": true,
+  "det_value": "-1"
+ },
+ {
+  "status": "pointwise",
+  "exceptional_factors": [],
+  "inverse": {
+   "x": "r",
+   "y": "q",
+   "z": "-a0*q**2 + p"
+  },
+  "composition_verified": true,
+  "branch": 4,
+  "solution": {
+   "a1": "0",
+   "a2": "0",
+   "a3": "0",
+   "b0": "0",
+   "b1": "0",
+   "b2": "0",
+   "c0": "0",
+   "c1": "0"
+  },
+  "free_parameters": [
+   "a0"
+  ],
+  "det_constant_identity": true,
+  "det_value": "-1"
+ }
+]

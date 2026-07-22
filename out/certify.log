@@ -1,0 +1,46 @@
+                     SINGULAR                                 /  Development
+ A Computer Algebra System for Polynomial Computations       /   version 4.4.1
+                                                           0<
+ by: W. Decker, G.-M. Greuel, G. Pfister, H. Schoenemann     \   Jan 2025
+FB Mathematik der Universitaet, D-67653 Kaiserslautern        \
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/primdec.lib (4.4.1.0,Febv_2025)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/modfinduni.lib (4.4.0.0,Dec_2023)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/modular.lib (4.4.1.1,Feb_2025)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/resources.lib (4.1.2.0,Feb_2019)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/parallel.lib (4.4.1.1,Feb_2025)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/tasks.lib (4.1.2.0,Feb_2019)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/ring.lib (4.4.0.6,Sep_2024)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/absfact.lib (4.1.2.0,Feb_2019)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/triang.lib (4.4.1.0,Jan_2025)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/matrix.lib (4.3.2.3,Aug_2023)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/nctools.lib (4.1.2.0,Feb_2019)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/inout.lib (4.1.2.0,Feb_2019)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/random.lib (4.1.2.0,Feb_2019)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/polylib.lib (4.4.0.0,Nov_2023)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/elim.lib (4.3.2.5,Jul_2023)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/general.lib (4.4.0.6,Oct_2024)
+minimal primes: 3
+// ** redefining Jj (    ideal Jj;) 05-solver-inputs/certify_exhaustiveness.sing:33
+// ** redefining Jj (    ideal Jj;) 05-solver-inputs/certify_exhaustiveness.sing:33
+// ** redefining Jj (    ideal Jj;) 05-solver-inputs/certify_exhaustiveness.sing:33
+// ** redefining Jj (    ideal Jj;) 05-solver-inputs/certify_exhaustiveness.sing:33
+// ** redefining Jj (    ideal Jj;) 05-solver-inputs/certify_exhaustiveness.sing:33
+component 1 covered by family 5
+// ** redefining P (  ideal P = std(L[i]); int cov = 0;) 05-solver-inputs/certify_exhaustiveness.sing:31
+// ** redefining cov (  ideal P = std(L[i]); int cov = 0;) 05-solver-inputs/certify_exhaustiveness.sing:31
+// ** redefining Jj (    ideal Jj;) 05-solver-inputs/certify_exhaustiveness.sing:33
+// ** redefining Jj (    ideal Jj;) 05-solver-inputs/certify_exhaustiveness.sing:33
+// ** redefining Jj (    ideal Jj;) 05-solver-inputs/certify_exhaustiveness.sing:33
+component 2 covered by family 2
+// ** redefining P (  ideal P = std(L[i]); int cov = 0;) 05-solver-inputs/certify_exhaustiveness.sing:31
+// ** redefining cov (  ideal P = std(L[i]); int cov = 0;) 05-solver-inputs/certify_exhaustiveness.sing:31
+// ** redefining Jj (    ideal Jj;) 05-solver-inputs/certify_exhaustiveness.sing:33
+component 3 covered by family 0
+// ** redefining Jj (  ideal Jj; execute("Jj = J" + string(j) + ";");) 05-solver-inputs/certify_exhaustiveness.sing:49
+// ** redefining Jj (  ideal Jj; execute("Jj = J" + string(j) + ";");) 05-solver-inputs/certify_exhaustiveness.sing:49
+// ** redefining Jj (  ideal Jj; execute("Jj = J" + string(j) + ";");) 05-solver-inputs/certify_exhaustiveness.sing:49
+// ** redefining Jj (  ideal Jj; execute("Jj = J" + string(j) + ";");) 05-solver-inputs/certify_exhaustiveness.sing:49
+// ** redefining Jj (  ideal Jj; execute("Jj = J" + string(j) + ";");) 05-solver-inputs/certify_exhaustiveness.sing:49
+// ** redefining Jj (  ideal Jj; execute("Jj = J" + string(j) + ";");) 05-solver-inputs/certify_exhaustiveness.sing:49
+RESULT: EXHAUSTIVE -- classification unconditional
+Auf Wiedersehen.

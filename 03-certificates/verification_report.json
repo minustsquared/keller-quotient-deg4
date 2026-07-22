@@ -1,0 +1,48 @@
+{
+ "/Users/REDACTED/Desktop/jacobian-project/03-certificates/deg4_main_branches.json": [
+  {
+   "branch": 0,
+   "V1_det": true,
+   "V2_FoH": true,
+   "V3_HoF": true,
+   "V4_denominators": true
+  },
+  {
+   "branch": 1,
+   "V1_det": true,
+   "V2_FoH": true,
+   "V3_HoF": true,
+   "V4_denominators": true
+  },
+  {
+   "branch": 2,
+   "V1_det": true,
+   "V2_FoH": true,
+   "V3_HoF": true,
+   "V4_denominators": true
+  },
+  {
+   "branch": 3,
+   "V1_det": true,
+   "V2_FoH": true,
+   "V3_HoF": true,
+   "V4_denominators": true
+  },
+  {
+   "branch": 4,
+   "V1_det": true,
+   "V2_FoH": true,
+   "V3_HoF": true,
+   "V4_denominators": true
+  }
+ ],
+ "/Users/REDACTED/Desktop/jacobian-project/03-certificates/deg4_b0_stratum.json": [
+  {
+   "branch": 0,
+   "V1_det": true,
+   "V2_FoH": true,
+   "V3_HoF": true,
+   "V4_denominators": true
+  }
+ ]
+}

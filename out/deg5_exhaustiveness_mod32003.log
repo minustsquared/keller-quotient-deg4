@@ -1,0 +1,120 @@
+                     SINGULAR                                 /  Development
+ A Computer Algebra System for Polynomial Computations       /   version 4.4.1
+                                                           0<
+ by: W. Decker, G.-M. Greuel, G. Pfister, H. Schoenemann     \   Jan 2025
+FB Mathematik der Universitaet, D-67653 Kaiserslautern        \
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/elim.lib (4.3.2.5,Jul_2023)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/ring.lib (4.4.0.6,Sep_2024)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/primdec.lib (4.4.1.0,Febv_2025)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/modfinduni.lib (4.4.0.0,Dec_2023)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/modular.lib (4.4.1.1,Feb_2025)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/resources.lib (4.1.2.0,Feb_2019)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/parallel.lib (4.4.1.1,Feb_2025)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/tasks.lib (4.1.2.0,Feb_2019)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/absfact.lib (4.1.2.0,Feb_2019)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/triang.lib (4.4.1.0,Jan_2025)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/matrix.lib (4.3.2.3,Aug_2023)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/nctools.lib (4.1.2.0,Feb_2019)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/random.lib (4.1.2.0,Feb_2019)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/polylib.lib (4.4.0.0,Nov_2023)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/general.lib (4.4.0.6,Oct_2024)
+// ** loaded /opt/homebrew/bin/../Cellar/singular/4.4.1p5_3/bin/../share/singular/LIB/inout.lib (4.1.2.0,Feb_2019)
+// ** redefining Jstd (  ideal Jstd = std(Js[k]);) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:38
+// ** redefining Jstd (  ideal Jstd = std(Js[k]);) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:38
+CHECK (A) PASSED (mod 32003)
+intersection has 47 generators
+  gen 1 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 2 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 3 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 4 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 5 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 6 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 7 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 8 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 9 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 10 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 11 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 12 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 13 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 14 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 15 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 16 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 17 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 18 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 19 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 20 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 21 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 22 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 23 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 24 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 25 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 26 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 27 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 28 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 29 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 30 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 31 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 32 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 33 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 34 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 35 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 36 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 37 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 38 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 39 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 40 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 41 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 42 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 43 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 44 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 45 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 46 of 47 : in rad(I) mod 32003
+// ** redefining rab (  ideal rab = std(It + ideal(1 - tt*Kt[i]));) 05-solver-inputs/deg5_certify_exhaustiveness_mod32003.sing:58
+  gen 47 of 47 : in rad(I) mod 32003
+RESULT: DEG5 EXHAUSTIVE (MOD 32003 PREVIEW ONLY -- NOT A QQ CERTIFICATE)
+Auf Wiedersehen.

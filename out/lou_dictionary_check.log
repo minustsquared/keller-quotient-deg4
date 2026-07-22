@@ -1,0 +1,5 @@
+(a) det(5x5) = -rho^2: VERIFIED
+(b) det JF = -2 and 3-point fiber over (0,2,0): VERIFIED
+(c) T = F1/x = 2*gamma identically: VERIFIED (V(T) = {gamma=0})
+(d) det DG = -T^2 * det DF (weight order (-2,-1,1)): VERIFIED
+ALL DICTIONARY CHECKS PASSED

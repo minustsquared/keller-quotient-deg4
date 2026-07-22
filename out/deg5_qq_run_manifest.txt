@@ -1,0 +1,30 @@
+Degree-5 exact (QQ) minAssGTZ run -- personally inspected, not taken on faith from any watchdog notification.
+
+PID: 33594
+Command: Singular 05-solver-inputs/deg5_decomposition.sing
+Log path: out/deg5_certify.log
+Started: Tue Jul 21 13:56:14 2026
+Singular version: 4.4.1 (44105, 64 bit), Nov 11 2025 build, via Homebrew singular 4.4.1p5_3
+Ring: QQ, 13 variables (a0..a4,b0..b4,c0,c1,c2), ideal with 17 generators (see file for exact polys)
+Algorithm: minAssGTZ(I) -- primary decomposition, no other options set
+
+Resource use snapshots (re-check by running:
+  ps -o pid,lstart,etime,%cpu,%mem,rss,vsz,command -p 33594
+):
+  2026-07-21 13:56:14  started
+  2026-07-21 14:09     ~13 min elapsed, RSS ~147MB, healthy
+  2026-07-21 14:42     ~44 min elapsed, RSS ~267MB, healthy
+  2026-07-21 14:43     ~46 min elapsed, RSS ~260MB, 1.0% mem, 96% cpu -- healthy
+
+Diagnostic finding (2026-07-21, via `sample 33594 3`): >60% of sampled time is
+inside GMP's __gmpn_nussbaumer_mul (FFT-based big-integer multiplication) --
+strong evidence of intermediate coefficient blowup in exact QQ arithmetic,
+not a combinatorially large search space.
+
+Corroborating modular evidence (2026-07-21, ZZ/32003, same ideal, ~40s
+runtime): minAssGTZ finds exactly 2 minimal primes. This is a HEURISTIC
+PREVIEW, NOT a characteristic-zero certificate -- do not cite as a result.
+
+System context at last check: 24GB RAM total, 42% free, so this run is not
+resource-constrained and there is ample headroom to run parallel modular
+primes / alternate engines alongside it.

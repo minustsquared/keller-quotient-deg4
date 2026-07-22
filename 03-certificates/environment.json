@@ -1,0 +1,8 @@
+{
+ "python": "3.14.6 (main, Jun 10 2026, 10:03:53) [Clang 21.0.0 (clang-2100.0.123.102)]",
+ "sympy": "1.14.0",
+ "coefficient_field": "QQ; function fields QQ(free params, p, q, r) for inverses",
+ "groebner_order_inverse_computation": "lex, x > y > z",
+ "decomposition_method": "sympy.solve triangular decomposition (Groebner-based); completeness NOT independently certified (Level 3 pending)",
+ "normalization": "anchors z, y, x with unit coefficients; forced by Keller condition up to equivariant diagonal linear changes of source and target"
+}
