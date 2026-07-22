@@ -1,0 +1,4 @@
+(1) c^2*Delta descends: c^2*Delta = s^3 - s^2 - 18st + 16t + 27t^2  VERIFIED
+(1b) p = 8 - 9s + 27t is a plane invariant  VERIFIED
+(2) leading coeff of G's fiber cubic = 2*(s^3 - s^2 - 18st + 27t^2 + 16t) = 2*c^2*Delta  VERIFIED
+ALL DELTA-DICTIONARY CHECKS PASSED
